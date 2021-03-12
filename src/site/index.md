@@ -1,9 +1,8 @@
 ---
-title: EleventyOne
-subtitle: A project scaffold for getting building with Eleventy quickly.<br /> Made by <a href="https://twitter.com/philhawksworth">Phil</a> for <a href="https://twitter.com/philhawksworth">Phil</a>, but perhaps you might also find it useful.
+title: Kevin Hill
+subtitle: I love to write code and create things. Code makes ideas come to life and gives creativity an outlet to make something amazing.
 layout: layouts/base.njk
 ---
-
 
 ## This site is a starting point
 
@@ -16,8 +15,6 @@ From this point we should already have:
 - JS [search index](/search.json) generator
 - [Netlify Dev](https://www.netlify.com/products/dev) for testing [Netlify redirects](https://netlify.com/docs/redirects/)
 - Serverless (FaaS) development pipeline with [Netlify Dev](https://www.netlify.com/products/dev) and [Netlify Functions](https://www.netlify.com/products/functions)
-
-
 
 ## Post pages
 
@@ -34,7 +31,7 @@ The pages found in in the posts
 
 ## Links from an external data source
 
-These links were sourced from [hawksworx.com](https://www.hawksworx.com/feed.json) at build time.
+These links were sourced from at build time.
 
 <ul class="listing">
 {%- for item in hawksworx.entries.slice(0,5) -%}
@@ -43,7 +40,6 @@ These links were sourced from [hawksworx.com](https://www.hawksworx.com/feed.jso
   </li>
 {%- endfor -%}
 </ul>
-
 
 ## Prerequisite
 
@@ -63,6 +59,7 @@ npm run start
 ```
 
 ## Add some Netlify helpers
+
 Netlify Dev adds the ability to use Netlify redirects, proxies, and serverless functions.
 
 ```bash
@@ -84,7 +81,3 @@ Netlify's Redirects API can provide friendlier URLs as proxies to these URLs.
 
 - [/api/hello](/api/hello)
 - [/api/fetch-joke](/api/fetch-joke)
-
-
-
-
