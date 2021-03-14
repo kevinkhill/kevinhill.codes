@@ -1,51 +1,39 @@
+require("dotenv/config");
 const { GitFolio } = require("gitfolio");
 
-const gitfolio = new GitFolio({
-  username: "kevinkhill",
-  apiKey: process.env.GITHUB_API_KEY
-});
-
 module.exports = () => {
-  async function getRepoList() {
-    try {
-      const cache = await readCacheFile();
-
-      return cache.repos;
-    } catch (err) {
-      //console.error(err);
-      try {
-        return gitfolio.getUserRepoTitles();
-      } catch (err) {
-        return [];
-      }
-    }
-  }
+  const gitfolio = new GitFolio({
+    username: "kevinkhill",
+    apiKey: process.env.GITHUB_API_KEY
+  });
 
   async function scanRepos(repoList) {
-    const projects = await async.map(repoList, async (repo, cb) => {
-      cb(null, await gitfolio.getInfoFromRepo(repo));
-    });
+    const projects = [];
 
-    return projects.filter(o => o.name);
+    for (const repo of repoList) {
+      const info = await gitfolio.getInfoFromRepo(repo);
+
+      if (info) {
+        projects.push(info);
+      }
+    }
+
+    return projects;
   }
 
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
-      const repos = await this.getRepoList();
+      const repos = await gitfolio.getUserRepoTitles();
 
       if (repos.length > 0) {
-        // console.log(`User ${this.gitfolio.username} has ${repos.length} repositories.`);
-
-        if (this.listRepos) {
-          return console.dir(repos);
-        }
-
-        const projects = await this.scanRepos(repos);
+        const projects = await scanRepos(repos);
 
         resolve({ repos, projects });
+      } else {
+        resolve({ repos, projects: [] });
       }
     } catch (err) {
-      reject(err);
+      reject({ repos: [], projects: [err] });
     }
   });
-}
+};

@@ -1,22 +1,28 @@
 {
-  "name": "EleventyOne",
-  "version": "3.0.0",
-  "description": "A project bootstrap for Eleventy sites. With pipelines for PostCSS, JavaScript, and serverless functions",
-  "author": "Phil Hawksworth",
+  "name": "kevinhill.codes",
+  "version": "1.0.0",
+  "description": "My Website",
+  "author": {
+    "email": "kevinkhill@protonmail.com",
+    "name": "Kevin Hill",
+    "url": "https://kevinhill.codes"
+  },
   "license": "MIT",
   "scripts": {
+    "net:dev": "netlify dev",
     "start": "npm run dev",
     "dev": "cross-env ELEVENTY_ENV=dev eleventy --serve",
     "build": "cross-env ELEVENTY_ENV=prod eleventy",
-    "seed": "cross-env ELEVENTY_ENV=seed eleventy"
+    "seed": "cross-env DEBUG=Eleventy* ELEVENTY_ENV=seed eleventy"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/philhawksworth/eleventyone"
+    "url": "https://github.com/kevinkhill/kevinhill.codes"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.8.3",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
+    "async": "^3.2.0",
     "autoprefixer": "^9.6.0",
     "axios": "^0.21.1",
     "cssnano": "^4.1.10",
