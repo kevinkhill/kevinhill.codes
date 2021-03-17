@@ -34,7 +34,7 @@ The pages found in in the posts
 These links were sourced from at build time.
 
 <ul class="listing">
-{%- for item in gitfolio.repos.slice(0,5) -%}
+{%- for item in gitregator.repos.slice(0,5) -%}
   <li>
     <a href="https://github.com/kevinkhill/{{ repo }}">{{ repo }}</a>
   </li>
