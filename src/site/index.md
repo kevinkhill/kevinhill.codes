@@ -4,19 +4,7 @@ subtitle: I love to write code and create things. Code helps ideas come to life 
 layout: layouts/base.njk
 ---
 
-## This site is a starting point
-
-From this point we should already have:
-
-- [Eleventy](https://11ty.io) with a skeleton site
-- A date format filter for Nunjucks based on [Luxon](https://moment.github.io/luxon)
-- A tiny CSS pipeline with PostCSS
-- A tiny inline JS pipeline. (<a href="#" class="btn-log">Test a console.log message</a>)
-- JS [search index](/search.json) generator
-- [Netlify Dev](https://www.netlify.com/products/dev) for testing [Netlify redirects](https://netlify.com/docs/redirects/)
-- Serverless (FaaS) development pipeline with [Netlify Dev](https://www.netlify.com/products/dev) and [Netlify Functions](https://www.netlify.com/products/functions)
-
-## Post pages
+## Posts
 
 The pages found in in the posts
 
@@ -34,7 +22,7 @@ The pages found in in the posts
 These links were sourced from at build time.
 
 <ul class="listing">
-{%- for item in github.repos.slice(0,5) -%}
+{%- for repo in github.repos.slice(0,5) -%}
   <li>
     <a href="https://github.com/kevinkhill/{{ repo }}">{{ repo }}</a>
   </li>
