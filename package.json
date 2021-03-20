@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "My Website",
   "author": {
-    "email": "kevinkhill@protonmail.com",
+    "email": "kevinkhill@gmail.com",
     "name": "Kevin Hill",
     "url": "https://kevinhill.codes"
   },
@@ -13,7 +13,8 @@
     "start": "npm run dev",
     "dev": "cross-env ELEVENTY_ENV=dev eleventy --serve",
     "build": "cross-env ELEVENTY_ENV=prod eleventy",
-    "seed": "cross-env DEBUG=Eleventy* ELEVENTY_ENV=seed eleventy"
+    "seed": "cross-env ELEVENTY_ENV=seed eleventy",
+    "data:github": "cross-env ELEVENTY_ENV=seed node ./tools/run.js github.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,7 @@
     "autoprefixer": "^9.6.0",
     "axios": "^0.21.1",
     "cssnano": "^4.1.10",
-    "dotenv": "^8.0.0",
+    "gitregator": "^1.2.1",
     "html-minifier": "^4.0.0",
     "luxon": "^1.16.0",
     "node-fetch": "^2.6.1",
@@ -41,6 +42,8 @@
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
-    "cross-env": "5.2.0"
+    "cross-env": "5.2.0",
+    "dotenv": "^8.0.0",
+    "eslint": "^7.22.0"
   }
 }
