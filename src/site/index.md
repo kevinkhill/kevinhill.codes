@@ -19,10 +19,10 @@ The pages found in in the posts
 
 ## Links from an external data source
 
-These links were sourced from at build time.
+These links were generated at build time using my fun little module, the [GitRegator](https://github.com/kevinkhill/gitregator)!
 
 <ul class="listing">
-{%- for repo in github.repos.slice(0,5) -%}
+{%- for repo in github.repos.sort() -%}
   <li>
     <a href="https://github.com/kevinkhill/{{ repo }}">{{ repo }}</a>
   </li>
@@ -32,4 +32,3 @@ These links were sourced from at build time.
 ## API functions
 
 - [/api/hello](/api/hello)
-- [/api/fetch-joke](/api/fetch-joke)
