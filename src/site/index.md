@@ -17,18 +17,6 @@ The pages found in in the posts
 {%- endfor -%}
 </ul>
 
-## Links from an external data source
-
-These links were generated at build time using my fun little module, the [GitRegator](https://github.com/kevinkhill/gitregator)!
-
-<ul class="listing">
-{%- for repo in github.repos.sort() -%}
-  <li>
-    <a href="https://github.com/kevinkhill/{{ repo }}">{{ repo }}</a>
-  </li>
-{%- endfor -%}
-</ul>
-
 ## API functions
 
 - [/api/hello](/api/hello)
