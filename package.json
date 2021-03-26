@@ -2,49 +2,49 @@
   "name": "kevinhill.codes",
   "version": "1.0.0",
   "description": "My Website",
-  "author": {
-    "email": "kevinkhill@gmail.com",
-    "name": "Kevin Hill",
-    "url": "https://kevinhill.codes"
-  },
-  "license": "MIT",
-  "scripts": {
-    "net:dev": "netlify dev",
-    "start": "npm run dev",
-    "dev": "cross-env ELEVENTY_ENV=dev eleventy --serve",
-    "build": "cross-env ELEVENTY_ENV=prod eleventy",
-    "seed": "cross-env ELEVENTY_ENV=seed eleventy",
-    "data:github": "cross-env ELEVENTY_ENV=seed node ./tools/run.js github.js"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/kevinkhill/kevinhill.codes"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Kevin Hill",
+    "email": "kevinkhill@gmail.com",
+    "url": "https://kevinhill.codes"
+  },
+  "scripts": {
+    "build": "cross-env ELEVENTY_ENV=prod eleventy",
+    "data:github": "cross-env ELEVENTY_ENV=seed node ./tools/run.js github.js",
+    "dev": "cross-env ELEVENTY_ENV=dev eleventy --serve",
+    "seed": "cross-env ELEVENTY_ENV=seed eleventy",
+    "start": "npm run dev"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.8.3",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "async": "^3.2.0",
-    "autoprefixer": "^9.6.0",
     "axios": "^0.21.1",
-    "cssnano": "^4.1.10",
     "gitregator": "^1.2.1",
-    "html-minifier": "^4.0.0",
     "luxon": "^1.16.0",
     "node-fetch": "^2.6.1",
-    "postcss": "^7.0.17",
+    "tailwindcss": "^2.0.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.6.0",
+    "cross-env": "5.2.0",
+    "cssnano": "^4.1.10",
+    "dotenv": "^8.0.0",
+    "eslint": "^7.22.0",
+    "html-minifier": "^4.0.0",
+    "netlify-cli": "^3.13.7",
+    "postcss": "^8.2.8",
+    "postcss-cli": "^8.3.1",
     "postcss-color-mix": "^1.1.0",
     "postcss-comment": "^2.0.0",
     "postcss-import": "^12.0.1",
     "postcss-mixins": "^6.2.1",
     "postcss-simple-vars": "^5.0.2",
     "precss": "^4.0.0",
-    "uglify-js": "^3.6.0",
-    "xml2js": "^0.4.19"
-  },
-  "devDependencies": {
-    "cross-env": "5.2.0",
-    "dotenv": "^8.0.0",
-    "eslint": "^7.22.0",
-    "netlify-cli": "^3.13.4"
+    "uglify-js": "^3.6.0"
   }
 }
