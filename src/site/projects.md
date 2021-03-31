@@ -7,7 +7,7 @@ subtitle: All my projects hosted on Github... please, look around!
 These cards were generated at build time using info pulled from `.gitregator.yml` files placed in each repository. They are queried and collected using a fun little module made soley for this purpose... the [GitRegator](https://github.com/kevinkhill/gitregator)!
 
 <div class="">
-{%- for repo in github.repos.sort() -%}
+{%- for repo in github.repos -%}
     <div class="bg-white mb-5 p-3 shadow-lg rounded-lg flex justify-between items-center">
       <div class="flex">
         <div class="mr-4">

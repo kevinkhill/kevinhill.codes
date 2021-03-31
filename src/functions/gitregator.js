@@ -1,22 +1,19 @@
-// const { GitRegator } = require("gitregator");
-// const { tryIt } = require("./lib");
+const { GitRegator } = require("gitregator");
+const { tryIt } = require("./lib");
 
-// exports.handler = async (event, context) => {
-//   tryIt(async () => {
-//     const client = new GitRegator({
-//       username: "kevinkhill",
-//       apiKey: process.env.GH_TOKEN
-//     });
+exports.handler = async event => {
+  tryIt(async () => {
+    const client = new GitRegator({
+      username: "kevinkhill",
+      apiKey: process.env.GH_TOKEN
+    });
 
-//     const repos = await client.getUserRepoTitles();
+    const { repo } = event.queryStringParameters;
 
-//     if (repos.length > 0) {
-//       const projects = await Promise.all(repos.map(client.getInfoFromRepo));
-//       const json = { repos, projects };
+    if (repo) {
+      const info = await client.getInfoFromRepo(repo);
 
-//       return json;
-//     } else {
-//       return { repos, projects: [] };
-//     }
-//   });
-// };
+      return info;
+    }
+  });
+};
