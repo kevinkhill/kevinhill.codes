@@ -36,7 +36,7 @@
     "dotenv": "^8.0.0",
     "eslint": "^7.22.0",
     "html-minifier": "^4.0.0",
-    "netlify-cli": "^3.13.7",
+    "netlify-cli": "^3.15.0",
     "postcss": "^8.2.8",
     "postcss-cli": "^8.3.1",
     "postcss-color-mix": "^1.1.0",
