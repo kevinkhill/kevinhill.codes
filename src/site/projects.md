@@ -1,10 +1,4 @@
----
-title: Projects
-layout: layouts/base.njk
-subtitle: All my projects, hosted on Github... please look around!
----
-
-These cards were generated at build time using info pulled from `.gitregator.yml` files placed in each repository. They are queried and collected using a fun little module made soley for this purpose... the [GitRegator](https://github.com/kevinkhill/gitregator)!
+ 
 
 <div class="grid grid-cols-2 gap-4">
 {%- for repo in github.repos -%}
